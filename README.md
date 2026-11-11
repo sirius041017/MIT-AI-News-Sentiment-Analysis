@@ -55,26 +55,8 @@ Word frequencies describe this corpus; raw counts across unequal sentiment group
 
 This single-source institutional news sample is not representative of public opinion or all AI coverage. Text sentiment does not directly measure public trust, perceived safety, or attitudes toward AI. VADER is not validated here against human annotations and can misread scientific language, negation, and context. Date coverage and monthly sample sizes vary. No causal or statistically significant change is claimed.
 
-## Repository structure
 
-```text
-MIT-AI-News-Sentiment-Analysis/
-├── README.md
-├── requirements.txt
-├── .gitignore
-├── notebooks/
-│   └── mit_ai_news_sentiment.ipynb
-├── data/
-│   ├── README.md
-│   └── MIT_AI_ARTICLES.csv
-└── images/
-    ├── sentiment_distribution.png
-    ├── monthly_trend.png
-    ├── title_summary_comparison.png
-    └── wordcloud_comparison.png
-```
-
-## Run locally
+## Run
 
 From the repository root, create and activate a Python virtual environment, then run:
 
@@ -86,11 +68,6 @@ python -m jupyterlab
 
 Open `notebooks/mit_ai_news_sentiment.ipynb`, select the environment's Python kernel, and run all cells in order. The notebook locates the CSV from either the repository root or the `notebooks/` directory. The first VADER lexicon download requires internet access. Dependencies are listed without version pins; this is not a locked environment.
 
-## Reproducibility notes
-
-The supplied notebook referenced `sia` before initialization and used an undefined `clean_text` column. This version initializes VADER before use, explicitly defines the scoring text, removes duplicate scoring setup, updates the data path, and moves package installation into `requirements.txt`.
-
-The repaired code was executed sequentially in one fresh IPython process. A separate Jupyter-kernel launch could not be tested in the preparation environment. The original saved outputs had a mean compound score of 0.386 and a 2024 mean of 0.4031; the explicit title–summary reconstruction produces 0.3875 and 0.4059 respectively. Label counts agree. The original `clean_text` construction was absent, so the exact old preprocessing cannot be recovered from the supplied notebook.
 
 ## Possible extensions
 
@@ -98,7 +75,3 @@ The repaired code was executed sequentially in one fresh IPython process. A sepa
 - Compare title–summary scores with full-body scoring.
 - Normalize keyword frequencies before comparing sentiment groups.
 - Document collection criteria and add additional news sources.
-
-## Attribution
-
-Article source URLs and author bylines are retained in the supplied CSV. Dataset redistribution terms were not supplied; establish those terms before publishing the full article text. No third-party content license is implied by this repository.
