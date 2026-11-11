@@ -6,8 +6,6 @@ Article URLs point to MIT News. The supplied files do not document the collectio
 
 `paper_link` contains the literal placeholder `Not provided / no paper was made` in some rows; this is not represented as a null value. Zero nulls therefore does not imply complete bibliographic metadata.
 
-Before publishing the full CSV, establish its redistribution terms. If it cannot be shared, omit it from the public repository and retain this file to explain the schema and required local location. No license for third-party article content is granted by this project.
-
 | Field | Meaning |
 | --- | --- |
 | title | Article headline |
